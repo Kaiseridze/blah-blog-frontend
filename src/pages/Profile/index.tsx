@@ -76,7 +76,7 @@ const Profile = () => {
               className={styles.profile__avatar}
               onClick={() => avatarRef.current!.click()}
               sx={{ width: 100, height: 100 }}
-              src={`http://localhost:4444${
+              src={`${process.env.REACT_APP_API_URL}${
                 avatarUrl ? avatarUrl : data?.avatarUrl
               }`}
             ></Avatar>

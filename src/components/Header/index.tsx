@@ -26,7 +26,7 @@ const Header = () => {
       {isAuth && (
         <Link to={"/profile"}>
           <div className="header__user">
-            <Avatar src={`http://localhost:4444${authData?.avatarUrl}`} />
+            <Avatar src={`${process.env.REACT_APP_API_URL}${authData?.avatarUrl}`} />
             <Typography>{authData.fullName}</Typography>
           </div>
         </Link>

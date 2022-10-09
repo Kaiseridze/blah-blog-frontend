@@ -70,7 +70,7 @@ const FullPost = () => {
           {post.imageUrl && (
             <img
               className={styles.fullpost__image}
-              src={`http://localhost:4444${post.imageUrl}`}
+              src={`${process.env.REACT_APP_API_URL}${post.imageUrl}`}
               alt="postImg"
             />
           )}

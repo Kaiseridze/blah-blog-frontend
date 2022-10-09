@@ -64,7 +64,7 @@ const Post: FC<IPost> = ({
         <CardMedia
           component="img"
           height="140"
-          image={`http://localhost:4444${imageUrl}`}
+          image={`${process.env.REACT_APP_API_URL}${imageUrl}`}
           alt="Here could be your picture"
         />
 
