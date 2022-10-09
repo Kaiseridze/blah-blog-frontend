@@ -48,7 +48,7 @@ const Home = () => {
       ) : (
         <>
           <div className="home">
-            {posts.data.map((post: any) => (
+            {posts?.data?.map((post: any) => (
               <Post
                 isEditable={data?._id === post.user._id}
                 key={post._id}
