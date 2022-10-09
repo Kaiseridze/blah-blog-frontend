@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  background-color: rgb(85, 69, 177);
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 30px;
+
+  &__user {
+    display: flex;
+    align-items: center;
+    p {
+      margin-left: 15px;
+    }
+    div {
+      transition: 0.2s linear;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    color: white;
+  }
+
+  h3::before {
+    content: "BLAH";
+    letter-spacing: 10px;
+    color: rgb(64, 241, 114);
+  }
+  button {
+    margin-right: 15px;
+  }
+}
+
+.navmob {
+  display: none;
+}
+
+@media (max-width: 578px) {
+  .navmob {
+    display: block;
+  }
+  .nav, .header__user {
+    display: none;
+  }
+}

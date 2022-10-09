@@ -1,0 +1,86 @@
+.post {
+  position: relative;
+  width: 300px;
+  margin: 0 20px 40px 0;
+
+  &:hover {
+    .card {
+      &__button {
+        right: 0;
+      }
+      &__icons {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+.card {
+  &__header {
+    max-width: 300px;
+    overflow: auto;
+    border-bottom: 1px solid rgb(210, 210, 210);
+  }
+  &__button {
+    position: relative;
+    right: 30%;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+  }
+  &__icons {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease-in-out;
+    position: absolute;
+    left: 75%;
+    top: 5%;
+  }
+  &__views {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__icon {
+    cursor: pointer;
+    transition: 0.1s linear;
+    &:hover {
+      transform: scale(1.2);
+    }
+    &:first-child {
+      margin-right: 15px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .post {
+    margin: 0 0 40px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    &__button {
+      opacity: 1;
+      left: 0;
+    }
+    &__icons {
+      display: flex;
+      opacity: 1;
+      left: 75%;
+    }
+  }
+}
+
+
+@media (max-width: 578px) {
+  .card__icons{
+    left: 90%;
+  }
+  :root {
+    .card__icon_edit {
+      display: none;
+    }
+  }
+}

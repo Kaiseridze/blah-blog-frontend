@@ -1,0 +1,16 @@
+.nav {
+  &_user {
+    display: flex;
+    align-items: center;
+    p {
+      margin-left: 15px;
+    }
+    div {
+      transition: 0.2s linear;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

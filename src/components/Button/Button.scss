@@ -1,0 +1,30 @@
+button{
+    font-weight: 700;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: 0.15s linear;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+.primary{
+    background-color: rgb(43, 43, 180);
+}
+
+.secondary{
+    background-color: rgba(43, 43, 180, 0.406);
+}
+
+.tertiary{
+    background-color: rgba(200, 59, 59, 0.733);
+}
+
+.disabled{
+    background-color: rgb(116, 116, 116);
+}

@@ -1,0 +1,28 @@
+.navmob {
+  position: relative;
+
+  &__icon {
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+  }
+}
+
+.menu {
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  right: 20px;
+  background-color: rgb(85, 69, 177);
+  border-radius: 15px;
+  padding: 20px;
+  z-index: 1;
+  &__item {
+    margin-bottom: 10px;
+  }
+  a {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
