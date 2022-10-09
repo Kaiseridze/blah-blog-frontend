@@ -4,7 +4,7 @@ import { createComment, getPostComments, removeComment } from "./actionsCreators
 
 const initialState: ICommentFetch = {
   comments: [],
-  isLoading: false,
+  isCommentLoading: false,
   error: "",
 };
 
@@ -13,33 +13,30 @@ const commentSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [createComment.pending.type]: (state: { isLoading: boolean }) => {
-      state.isLoading = true;
-    },
     [createComment.fulfilled.type]: (
       state,
       action: PayloadAction<ICommentFetch>
     ) => {
       state.comments.push(action.payload);
-      state.isLoading = false;
+      state.isCommentLoading = false;
     },
     [createComment.rejected.type]: (state, action: PayloadAction<string>) => {
-      state.isLoading = false;
+      state.isCommentLoading = false;
       state.error = action.payload;
     },
 
-    [getPostComments.pending.type]: (state: { isLoading: boolean }) => {
-      state.isLoading = true;
+    [getPostComments.pending.type]: (state: { isCommentLoading: boolean }) => {
+      state.isCommentLoading = true;
     },
     [getPostComments.fulfilled.type]: (
       state,
       action: PayloadAction<ICommentFetch[]>
     ) => {
       state.comments = action.payload;
-      state.isLoading = false;
+      state.isCommentLoading = false;
     },
     [getPostComments.rejected.type]: (state, action: PayloadAction<string>) => {
-      state.isLoading = false;
+      state.isCommentLoading = false;
       state.error = action.payload;
     },
     [removeComment.pending.type]: (state, action) => {

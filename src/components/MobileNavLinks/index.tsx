@@ -26,6 +26,11 @@ const MobileNavLinks: FC<INavLinks> = ({ isAuth, onClick }) => {
                   Log&nbsp;Out
                 </li>
               </Link>
+              <Link to="/createPost">
+                <li className="menu__item">
+                  Create&nbsp;post
+                </li>
+              </Link>
             </>
           ) : (
             <>

@@ -15,7 +15,7 @@ export interface IAuthFetch {
 
 export interface ICommentFetch {
   comments: any[];
-  isLoading: boolean;
+  isCommentLoading: boolean;
   error: String;
 }
 
@@ -70,6 +70,7 @@ export interface ICommentBlock {
   user: IUser;
   onClick: React.MouseEventHandler<HTMLButtonElement | SVGSVGElement>;
   isEditable: boolean;
+  isLoading: boolean
 }
 
 export interface INavLinks {

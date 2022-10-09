@@ -27,7 +27,9 @@ const FullPost = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const windowEndRef = useRef<HTMLInputElement>(null);
 
-  const { comments } = useAppSelector((state) => state.comment);
+  const { comments, isCommentLoading } = useAppSelector(
+    (state) => state.comment
+  );
   const { data } = useAppSelector((state) => state.auth);
 
   const fetchPost = async () => {
@@ -107,8 +109,10 @@ const FullPost = () => {
                 No one has left a comment yet, be the first!
               </Typography>
             )}
+
             {comments?.map((comment) => (
               <CommentBlock
+                isLoading={isCommentLoading}
                 isEditable={
                   data?._id === comment?.user?._id ||
                   data?._id === post.user._id
