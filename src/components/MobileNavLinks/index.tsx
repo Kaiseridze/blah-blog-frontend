@@ -21,14 +21,14 @@ const MobileNavLinks: FC<INavLinks> = ({ isAuth, onClick }) => {
               <Link to="/profile">
                 <li className="menu__item">My&nbsp;Profile</li>
               </Link>
-              <Link to="/">
-                <li className="menu__item" onClick={onClick}>
-                  Log&nbsp;Out
-                </li>
-              </Link>
               <Link to="/createPost">
                 <li className="menu__item">
                   Create&nbsp;post
+                </li>
+              </Link>
+              <Link to="/">
+                <li className="menu__item" onClick={onClick}>
+                  Log&nbsp;Out
                 </li>
               </Link>
             </>
