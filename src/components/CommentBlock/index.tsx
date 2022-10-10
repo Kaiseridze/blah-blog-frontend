@@ -5,7 +5,6 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
-import List from "@mui/material/List";
 import ClearIcon from "@mui/icons-material/Clear";
 import Skeleton from "@mui/material/Skeleton";
 
@@ -24,15 +23,15 @@ const CommentBlock: FC<ICommentBlock> = ({
     <>
       {isLoading ? (
         <Skeleton>
-          <List>
-            <ListItem></ListItem>
-          </List>
+          <ListItem></ListItem>
         </Skeleton>
       ) : (
-        <List>
+        <>
           <ListItem classes={{ root: styles.comment }} alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar src={`${process.env.REACT_APP_API_URL}${user?.avatarUrl}`} />
+              <Avatar
+                src={`${process.env.REACT_APP_API_URL}${user?.avatarUrl}`}
+              />
             </ListItemAvatar>
 
             <ListItemText primary={user?.fullName} secondary={text} />
@@ -45,7 +44,7 @@ const CommentBlock: FC<ICommentBlock> = ({
           </ListItem>
 
           <Divider variant="inset" component="li" />
-        </List>
+        </>
       )}
     </>
   );

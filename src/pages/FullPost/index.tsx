@@ -16,6 +16,7 @@ import {
 import Button from "../../components/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import List from "@mui/material/List";
 
 import styles from "./FullPost.module.scss";
 
@@ -109,20 +110,20 @@ const FullPost = () => {
                 No one has left a comment yet, be the first!
               </Typography>
             )}
-
-            {comments?.map((comment) => (
-              <CommentBlock
-                isLoading={isCommentLoading}
-                isEditable={
-                  data?._id === comment?.user?._id ||
-                  data?._id === post.user._id
-                }
-                onClick={() => onRemove(id, comment._id)}
-                key={comment._id}
-                {...comment}
-              />
-            ))}
-
+            <List>
+              {comments?.map((comment) => (
+                <CommentBlock
+                  isLoading={isCommentLoading}
+                  isEditable={
+                    data?._id === comment?.user?._id ||
+                    data?._id === post.user._id
+                  }
+                  onClick={() => onRemove(id, comment._id)}
+                  key={comment._id}
+                  {...comment}
+                />
+              ))}
+            </List>
             {data ? (
               <form onSubmit={(e) => e.preventDefault()}>
                 <TextField
