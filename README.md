@@ -17,6 +17,15 @@ And complete freedom of expression.
 * Adaptive HTML and CSS
 * Cross Browser accessibility
 
+**Stack:**
+* React
+* TypeScript
+* Redux-Toolkit
+* Axios
+* Material UI
+* React-Markdown
+* Module Scss
+
 **In the plans:**
 1. Transfer to vps (static data on heroku periodically die)
 2. Add live comments 
