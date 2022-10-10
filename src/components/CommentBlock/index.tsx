@@ -32,7 +32,7 @@ const CommentBlock: FC<ICommentBlock> = ({
         <List>
           <ListItem classes={{ root: styles.comment }} alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar src={`${process.env.REACT_APP_API_URL}{user?.avatarUrl}`} />
+              <Avatar src={`${process.env.REACT_APP_API_URL}${user?.avatarUrl}`} />
             </ListItemAvatar>
 
             <ListItemText primary={user?.fullName} secondary={text} />
