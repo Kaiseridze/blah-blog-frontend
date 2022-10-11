@@ -21,6 +21,7 @@ And complete freedom of expression.
 * React
 * TypeScript
 * Redux-Toolkit
+* React Hook Form
 * Axios
 * Material UI
 * React-Markdown
