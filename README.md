@@ -27,6 +27,6 @@ And complete freedom of expression.
 * Module Scss
 
 **In the plans:**
-1. Transfer to vps (static data on heroku periodically die)
+1. ~~Transfer to vps (static data on heroku periodically die)~~
 2. Add real-time comments 
 3. Refactor some code 
