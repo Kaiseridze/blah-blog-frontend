@@ -61,12 +61,16 @@ const Post: FC<IPost> = ({
           subheader={formatDate(createdAt)}
         />
 
-        <CardMedia
-          component="img"
-          height="140"
-          image={`${process.env.REACT_APP_API_URL}${imageUrl}`}
-          alt="Here could be your picture"
-        />
+        {imageUrl && (
+          <CardMedia
+            component="img"
+            height="140"
+            image={`${
+              process.env.REACT_APP_API_URL
+            }${imageUrl}`}
+            alt="Picture is disappeared"
+          />
+        )}
 
         <CardContent classes={{ root: styles.card__content }}>
           <Typography gutterBottom variant="h5" component="h5">

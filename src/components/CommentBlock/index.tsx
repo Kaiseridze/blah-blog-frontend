@@ -6,7 +6,7 @@ import Avatar from "@mui/material/Avatar";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import ClearIcon from "@mui/icons-material/Clear";
-import Skeleton from "@mui/material/Skeleton";
+
 
 import styles from "./CommentBlock.module.scss";
 
@@ -17,35 +17,23 @@ const CommentBlock: FC<ICommentBlock> = ({
   user,
   onClick,
   isEditable,
-  isLoading,
 }) => {
   return (
     <>
-      {isLoading ? (
-        <Skeleton>
-          <ListItem></ListItem>
-        </Skeleton>
-      ) : (
-        <>
-          <ListItem classes={{ root: styles.comment }} alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar
-                src={`${process.env.REACT_APP_API_URL}${user?.avatarUrl}`}
-              />
-            </ListItemAvatar>
+      <ListItem classes={{ root: styles.comment }} alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar src={`${process.env.REACT_APP_API_URL}${user?.avatarUrl}`} />
+        </ListItemAvatar>
 
-            <ListItemText primary={user?.fullName} secondary={text} />
-            {isEditable && (
-              <ClearIcon
-                classes={{ root: styles.comment__clear }}
-                onClick={onClick}
-              />
-            )}
-          </ListItem>
-
-          <Divider variant="inset" component="li" />
-        </>
-      )}
+        <ListItemText primary={user?.fullName} secondary={text} />
+        {isEditable && (
+          <ClearIcon
+            classes={{ root: styles.comment__clear }}
+            onClick={onClick}
+          />
+        )}
+      </ListItem>
+      <Divider variant="inset" component="li" />
     </>
   );
 };

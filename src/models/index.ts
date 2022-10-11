@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 
 // Redux interfaces
 export interface IPostFetch {
@@ -23,8 +23,10 @@ export interface ICommentFetch {
 export interface IButton {
   className: string;
   children: React.ReactNode;
-  onClick?: any;
-  type?: any;
+  onClick?: MouseEventHandler<
+    HTMLButtonElement | SVGSVGElement | HTMLLIElement
+  >;
+  type?: "button" | "submit" | "reset" | undefined;
   disabled?: boolean;
 }
 
@@ -70,10 +72,11 @@ export interface ICommentBlock {
   user: IUser;
   onClick: React.MouseEventHandler<HTMLButtonElement | SVGSVGElement>;
   isEditable: boolean;
-  isLoading: boolean
 }
 
 export interface INavLinks {
-  onClick: React.MouseEventHandler<HTMLButtonElement | SVGSVGElement | HTMLLIElement>;
+  onClick: React.MouseEventHandler<
+    HTMLButtonElement | SVGSVGElement | HTMLLIElement
+  >;
   isAuth: boolean;
 }

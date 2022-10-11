@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
@@ -17,6 +17,7 @@ import Button from "../../components/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import List from "@mui/material/List";
+import Skeleton from "@mui/material/Skeleton";
 
 import styles from "./FullPost.module.scss";
 
@@ -53,7 +54,8 @@ const FullPost = () => {
     windowEndRef?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const onSubmit = async () => {
+  const onSubmit = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
     setText("");
     await dispatch(createComment({ id, text }));
     await dispatch(getPostComments(id));
@@ -111,21 +113,25 @@ const FullPost = () => {
               </Typography>
             )}
             <List>
-              {comments?.map((comment) => (
-                <CommentBlock
-                  isLoading={isCommentLoading}
-                  isEditable={
-                    data?._id === comment?.user?._id ||
-                    data?._id === post.user._id
-                  }
-                  onClick={() => onRemove(id, comment._id)}
-                  key={comment._id}
-                  {...comment}
-                />
-              ))}
+              {isCommentLoading
+                ? [...Array(5)].map((_, index) => (
+                    <Skeleton width={400} height={100} key={index} />
+                  ))
+                : comments?.map((comment) => (
+                    <CommentBlock
+                      isLoading={isCommentLoading}
+                      isEditable={
+                        data?._id === comment?.user?._id ||
+                        data?._id === post.user._id
+                      }
+                      onClick={() => onRemove(id, comment._id)}
+                      key={comment._id}
+                      {...comment}
+                    />
+                  ))}
             </List>
             {data ? (
-              <form onSubmit={(e) => e.preventDefault()}>
+              <form onSubmit={onSubmit}>
                 <TextField
                   placeholder="Comment here..."
                   value={text}
@@ -135,9 +141,9 @@ const FullPost = () => {
                   rows={4}
                 />
                 <Button
+                  type="submit"
                   disabled={!text.trim().length}
                   className={text.trim().length ? "primary" : "disabled"}
-                  onClick={onSubmit}
                 >
                   Comment
                 </Button>
