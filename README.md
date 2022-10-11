@@ -28,5 +28,5 @@ And complete freedom of expression.
 
 **In the plans:**
 1. Transfer to vps (static data on heroku periodically die)
-2. Add live comments 
+2. Add real-time comments 
 3. Refactor some code 
