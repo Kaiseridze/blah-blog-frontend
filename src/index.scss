@@ -17,7 +17,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html,body{
+html,
+body {
   height: 100%;
 }
 
@@ -27,15 +28,16 @@ code {
 }
 
 .home {
+  max-width: 950px;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-evenly;
-  margin-top: 20px;
+  margin: 20px auto;
   min-height: 100%;
-  
-  &__pagination{
+
+  &__pagination {
     display: flex;
-    justify-content: center
-  };
+    justify-content: center;
+  }
 }
