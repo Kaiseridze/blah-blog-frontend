@@ -94,7 +94,7 @@ const FullPost = () => {
             />
           </div>
 
-          <div ref={windowEndRef} className={styles.comments}>
+          <div className={styles.comments}>
             {comments.length ? (
               <Typography
                 className={styles.comments__typography}
@@ -152,6 +152,7 @@ const FullPost = () => {
               <Typography>Please, sign in to comment</Typography>
             )}
           </div>
+          <div ref={windowEndRef}></div>
         </div>
       )}
     </>
